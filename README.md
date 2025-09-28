@@ -141,4 +141,3 @@ O sistema deve simular o funcionamento de um hospital com cadastro de *pacientes
 - Implementação de testes unitários para classes principais.  
 - Menu visual.
 
-Esse projeto pertece ao renan 
