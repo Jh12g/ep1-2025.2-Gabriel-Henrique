@@ -16,6 +16,15 @@ public Medico (String crm, String especialidadeMed, double precoConsulta){
 
 // add metodos...
 
+public void adicionarHorario(){
+
+} 
+
+public boolean verificarDisponibilidade(){
+
+    
+}
+
 
 public String getCrm(){
     return crm;

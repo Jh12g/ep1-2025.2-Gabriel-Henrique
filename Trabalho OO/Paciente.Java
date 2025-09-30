@@ -3,16 +3,24 @@ public class Paciente extends Pessoa {
 private String cpf;
 private int idade;
 
-public Paciente (String cpf,int idade){
+public Paciente (String nome,String cpf,int idade){
     this.cpf = cpf;
     this.idade = idade;
 
-    super(nome);
-    this.nome;
+    super();
+   
 
 }
 
 // add metodos...
+
+public double calcularCustoConsulta(){
+
+}
+
+public void adicionarConsulta(){
+
+}
 
 
 public String getCpf(){

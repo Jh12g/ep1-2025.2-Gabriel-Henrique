@@ -12,6 +12,18 @@ public class PlanoDeSaude {
 
     // add metodos...
 
+public void cadastrarPlano(){
+
+}
+
+public double aplicarDesconto(){
+
+}
+
+public boolean podeInternacaoEspecial(){
+    
+}
+
 
     public String getNome(){
         return nome;

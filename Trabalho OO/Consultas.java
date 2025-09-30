@@ -1,12 +1,16 @@
 public class Consultas {
 
+private Paciente paciente;
+private Medico medico;
 private String dataHora;
 private String local;
 private String status;
 private String diagnostico;
 private String prescricao;
 
-public Consultas(String dataHora,String local,String status,String diagnostico,String prescricao){
+public Consultas(Paciente paciente,Medico medico,String dataHora,String local,String status,String diagnostico,String prescricao){
+    this.paciente = paciente;
+    this.medico = medico;
     this.dataHora = dataHora;
     this.local = local;
     this.status = status;
@@ -16,6 +20,14 @@ public Consultas(String dataHora,String local,String status,String diagnostico,S
 }
 
 // add metodos...
+
+public void finalizarConsulta(){
+
+}
+
+public double calcularPrecoFinal(){
+    
+}
 
 public  String getDataHora(){
     return dataHora;
