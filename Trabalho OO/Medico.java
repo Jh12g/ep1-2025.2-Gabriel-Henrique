@@ -1,8 +1,12 @@
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class Medico extends Pessoa {
 
 private String crm;
 private String especialidadeMed;
 private double precoConsulta;
+private List<LocalDateTime> agendaHorarios;
 
 public Medico (String nome,String crm, String especialidadeMed, double precoConsulta){
     super(nome);
@@ -15,13 +19,36 @@ public Medico (String nome,String crm, String especialidadeMed, double precoCons
 
 // add metodos...
 
-public void adicionarHorario(){
+public boolean verificarDisponibilidade(LocalDateTime horas){
+
+    for (LocalDateTime horarioAgendado : this.agendaHorarios){
+        if (horarioAgendado.equals(horas)){
+            return false;
+        }
+    }
+
+    return true;
+    
+}
+
+public void adicionarHorario(LocalDateTime horas){
+
+    if (verificarDisponibilidade(horas)){
+        
+        this.agendaHorarios.add(horas);
+
+        System.out.println("hora do agendamento da  consulta: "+ horas);
+
+    } else {
+
+        System.out.println("Horario ja preenchido");
+    }
 
 } 
 
-public boolean verificarDisponibilidade(){
+public void remocaoAgenda(LocalDateTime horas){
 
-    
+    this.agendaHorarios.remove(horas);
 }
 
 

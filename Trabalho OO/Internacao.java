@@ -22,6 +22,11 @@ public Internacao(Paciente paciente, Medico medico,String dataDeEntrega,String d
 
 }
 
+
+public boolean iniciarInternacao(){
+    
+}
+
 public Paciente getPaciente() {
     return paciente;
 }
