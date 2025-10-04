@@ -4,12 +4,14 @@ public class PacienteEspecial extends Paciente {
     private PlanoDeSaude planoDeSaude;
     private boolean podeInternacao;
 
-    public PacienteEspecial(PlanoDeSaude planoDeSaude,boolean podeInternacao){
+    public PacienteEspecial(String nome,String cpf,int idade,PlanoDeSaude planoDeSaude,boolean podeInternacao){
+        super(nome,cpf,idade);
         this.planoDeSaude = planoDeSaude;
         this.podeInternacao = podeInternacao;
-        super();
+        
 
     }
+
 
     public boolean getPodeInternacao(){
         return podeInternacao;
@@ -20,5 +22,17 @@ public class PacienteEspecial extends Paciente {
         this.podeInternacao = podeInternacao;
     }
 
+
+    public PlanoDeSaude getPlanoDeSaude() {
+        return planoDeSaude;
+    }
+
+
+    public void setPlanoDeSaude(PlanoDeSaude planoDeSaude) {
+        this.planoDeSaude = planoDeSaude;
+    }
+
+
+    
 
 }

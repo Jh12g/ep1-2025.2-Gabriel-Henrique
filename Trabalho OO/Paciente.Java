@@ -4,7 +4,7 @@ private String cpf;
 private int idade;
 
 public Paciente (String nome,String cpf,int idade){
-    super(nome)
+    super(nome);
     this.cpf = cpf;
     this.idade = idade;
    
@@ -26,8 +26,8 @@ public String getCpf(){
     return cpf;
 }
 
-public void setCpf(int idade){
-    this.nome = nome;
+public void setCpf(String cpf){
+    this.cpf = cpf;
 }
     
 public int getIdade(){

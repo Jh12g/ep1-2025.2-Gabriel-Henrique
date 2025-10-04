@@ -24,31 +24,30 @@ public boolean podeInternacaoEspecial(){
     
 }
 
+public String getNome() {
+    return nome;
+}
 
-    public String getNome(){
-        return nome;
-    
-    }
+public void setNome(String nome) {
+    this.nome = nome;
+}
 
-    public void setNome(String nome){
-        this.nome = nome;
-    }
+public double getDesconto() {
+    return desconto;
+}
 
-    public double getDesconto(){
-        return desconto;
-    }
+public void setDesconto(double desconto) {
+    this.desconto = desconto;
+}
 
-    public void setDesconto(double desconto){
-        this.desconto = desconto;
-    }
+public String getDescricao() {
+    return descricao;
+}
 
-    public String getDescricao(){
-        return descricao;
-    }
+public void setDescricao(String descricao) {
+    this.descricao = descricao;
+}
 
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
-    }
 
     
 }

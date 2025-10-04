@@ -21,54 +21,72 @@ public Consultas(Paciente paciente,Medico medico,String dataHora,String local,St
 }
 
 // add metodos...
+public double calcularPrecoFinal(){
+    
+}
 
 public void finalizarConsulta(){
 
 }
 
-public double calcularPrecoFinal(){
-    
+
+
+public Paciente getPaciente() {
+    return paciente;
 }
 
-public  String getDataHora(){
+public void setPaciente(Paciente paciente) {
+    this.paciente = paciente;
+}
+
+public Medico getMedico() {
+    return medico;
+}
+
+public void setMedico(Medico medico) {
+    this.medico = medico;
+}
+
+public String getDataHora() {
     return dataHora;
 }
 
-public void setDataHora(String dataHora){
+public void setDataHora(String dataHora) {
     this.dataHora = dataHora;
 }
 
-public String getLocal(){
+public String getLocal() {
     return local;
-    
 }
 
-public void setLocal(String local){
+public void setLocal(String local) {
     this.local = local;
 }
 
-public String getStatus(){
+public String getStatus() {
     return status;
 }
 
-public void setStatus(String status){
+public void setStatus(String status) {
     this.status = status;
 }
 
-public String getDiagnostico(){
+public String getDiagnostico() {
     return diagnostico;
 }
 
-public void setDiagnostico(String diagnostico){
+public void setDiagnostico(String diagnostico) {
     this.diagnostico = diagnostico;
 }
 
-public String getPrescricao(){
+public String getPrescricao() {
     return prescricao;
 }
 
-public void setPrescricao(String prescricao){
+public void setPrescricao(String prescricao) {
     this.prescricao = prescricao;
 }
+
+
 
 }
