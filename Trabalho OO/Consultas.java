@@ -7,7 +7,6 @@ private String local;
 private String status;
 private String diagnostico;
 private String prescricao;
-private String cu;
 
 public Consultas(Paciente paciente,Medico medico,String dataHora,String local,String status,String diagnostico,String prescricao){
     this.paciente = paciente;

@@ -4,13 +4,14 @@ private String crm;
 private String especialidadeMed;
 private double precoConsulta;
 
-public Medico (String crm, String especialidadeMed, double precoConsulta){
+public Medico (String nome,String crm, String especialidadeMed, double precoConsulta){
+    super(nome);
     this.crm = crm;
     this.especialidadeMed = especialidadeMed;
     this.precoConsulta = precoConsulta;
 
-    super(nome);
-    this.nome;
+    
+    
 
 }
 

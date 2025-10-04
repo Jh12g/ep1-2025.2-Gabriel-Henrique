@@ -4,10 +4,9 @@ private String cpf;
 private int idade;
 
 public Paciente (String nome,String cpf,int idade){
+    super(nome)
     this.cpf = cpf;
     this.idade = idade;
-
-    super();
    
 
 }
