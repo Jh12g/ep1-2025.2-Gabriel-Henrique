@@ -14,7 +14,6 @@ public Medico (String nome,String crm, String especialidadeMed, double precoCons
     this.especialidadeMed = especialidadeMed;
     this.precoConsulta = precoConsulta;
 
-    
 }
 
 // add metodos...
@@ -76,4 +75,6 @@ public void setPrecoConsulta(double precoConsulta){
     this.precoConsulta = precoConsulta;
 
 }
+
+
 }

@@ -1,7 +1,6 @@
 public class Internacao {
 
-//paciente...
-//medico tal...
+
 
 private Paciente paciente;
 private Medico medico;
@@ -18,12 +17,54 @@ public Internacao(Paciente paciente, Medico medico,String dataDeEntrega,String d
     this.dataDeSaida = dataDeSaida;
     this.quarto = quarto;
     this.custo = custo;
-    this.status = status;
+    this.status = "Pedente";
 
 }
 
 
+
 public boolean iniciarInternacao(){
+
+    if(verificaOcupacao()){
+        
+        System.out.println("Quarto ocupado.");
+        return false;
+
+    } 
+    this.status = "Ativa";
+    System.out.println("Internação concedida para o paciente :" + paciente.getNome());
+    return true;
+}
+
+public boolean verificaOcupacao(){
+
+    return this.status.equals("Ativa");
+}
+
+
+public void finalizarInternacao(){
+    if (this.status.equals("Ativa")) {
+        this.status = "Finalizada";
+
+        this.dataDeSaida = java.time.LocalDate.now().toString();
+
+        System.out.println("Internação finalizada");
+    } else {
+System.out.println("Não foi possivel concluir a internação, Status atual: " + this.status);
+
+    }
+
+}
+
+public void cancelarInternacao(){
+    if ((this.status.equals("Ativa")) || this.status.equals("Pendente")) {
+        
+        this.status = "Cancelado";
+
+        System.out.println("Internação Cacelada");
+    } else {
+        System.out.println("Nao foi Possivel cancelar");
+    }
     
 }
 
@@ -84,7 +125,7 @@ public void setStatus(String status) {
 }
 
 
-
+// 
 
 
 
