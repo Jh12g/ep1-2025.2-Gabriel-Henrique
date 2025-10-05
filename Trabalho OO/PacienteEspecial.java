@@ -9,7 +9,6 @@ public class PacienteEspecial extends Paciente {
         this.planoDeSaude = planoDeSaude;
         this.podeInternacao = podeInternacao;
         
-
     }
 
 
