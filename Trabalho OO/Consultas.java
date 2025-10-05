@@ -7,62 +7,18 @@ private String local;
 private String status;
 private String diagnostico;
 private String prescricao;
-private double precoBase = 200.0;
 
-public Consultas(Paciente paciente,Medico medico,String dataHora,String local,String status,String diagnostico,String prescricao){
-    this.paciente = paciente;
-    this.medico = medico;
-    this.dataHora = dataHora;
-    this.local = local;
-    this.status = "Agendada";
-    this.diagnostico = diagnostico;
-    this.prescricao = prescricao;
-    
-}
-
-public double calcularPreco(){
-    
-    double precoFinal = precoBase;
-    String especialidade = medico.getEspecialidadeMed().toLowerCase().trim(); 
-
-
-if (especialidade.equalsIgnoreCase("cardiologia")) {
-precoFinal *= 1.5;
-precoFinal *= 0.9;
-
-} else if (especialidade.equalsIgnoreCase("neurologia")) {
-precoFinal *= 2.0;
-precoFinal *= 0.85;
-
-} else if (especialidade.equalsIgnoreCase("pediatria")) {
-precoFinal *= 1.2;
-precoFinal *= 0.95;
-
-} else if (especialidade.equalsIgnoreCase("dermatologia")) {
-precoFinal *= 1.3;
-precoFinal *= 0.9;
-
-} else if (especialidade.equalsIgnoreCase("ortopedia")) {
-precoFinal *= 1.4;
-precoFinal *= 0.92;
-
-} else {
-precoFinal *= 1.0; // sem alteração
-}
-
-return precoFinal;
-
-}
-
-public void fimConsulta(){
-    if (this.status.equals("Agendada")) {
-        this.status = "Realizada";
-        System.out.println("Consulta finalizada");
-    } else {
-        System.out.println("Consulta não foi realizdada");
+    public Consultas(String dataHora, String diagnostico, String local, Medico medico, Paciente paciente, String prescricao, String status) {
+        this.dataHora = dataHora;
+        this.diagnostico = diagnostico;
+        this.local = local;
+        this.medico = medico;
+        this.paciente = paciente;
+        this.prescricao = prescricao;
+        this.status = status;
     }
 
-}
+
 
 
 public Paciente getPaciente() {
@@ -121,6 +77,23 @@ public void setPrescricao(String prescricao) {
     this.prescricao = prescricao;
 }
 
+public void finalizarConsulta() { 
+    this.status = "Concluída"; 
+}
 
+public double calcularPrecoFinal() {
+    return medico.getCustoConsulta(); 
+}
+
+    @Override
+    public String toString() {
+        return "\n Consulta" +
+                "\n Paciente: " + (getPaciente() != null ? getPaciente().getNome() : "N/A") + 
+                "\n Medico: " + (getMedico() != null ? getMedico().getNome() : "N/A") + 
+                "\n Data e Hora: " + getDataHora() + 
+                "\n Local: " + getLocal() + 
+                "\n Status: " + getStatus();
+    }
+}
 
 }

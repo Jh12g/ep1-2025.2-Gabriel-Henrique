@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Medico extends Pessoa {
@@ -13,6 +14,7 @@ public Medico (String nome,String crm, String especialidadeMed, double precoCons
     this.crm = crm;
     this.especialidadeMed = especialidadeMed;
     this.precoConsulta = precoConsulta;
+    this.agendaHorarios = new ArrayList<>();
 
 }
 
