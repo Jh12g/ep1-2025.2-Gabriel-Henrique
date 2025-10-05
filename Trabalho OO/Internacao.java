@@ -1,7 +1,6 @@
 public class Internacao {
 
-
-
+    
 private Paciente paciente;
 private Medico medico;
 private String dataDeEntrada;
@@ -125,7 +124,7 @@ public void setStatus(String status) {
 }
 
 
-// 
+
 
 
 

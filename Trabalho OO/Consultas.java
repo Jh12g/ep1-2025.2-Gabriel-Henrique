@@ -7,25 +7,60 @@ private String local;
 private String status;
 private String diagnostico;
 private String prescricao;
+private double precoBase = 200.0;
 
 public Consultas(Paciente paciente,Medico medico,String dataHora,String local,String status,String diagnostico,String prescricao){
     this.paciente = paciente;
     this.medico = medico;
     this.dataHora = dataHora;
     this.local = local;
-    this.status = status;
+    this.status = "Agendada";
     this.diagnostico = diagnostico;
     this.prescricao = prescricao;
     
-
 }
 
-// add metodos...
-public double calcularPrecoFinal(){
+public double calcularPreco(){
     
+    double precoFinal = precoBase;
+    String especialidade = medico.getEspecialidadeMed().toLowerCase().trim(); 
+
+
+if (especialidade.equalsIgnoreCase("cardiologia")) {
+precoFinal *= 1.5;
+precoFinal *= 0.9;
+
+} else if (especialidade.equalsIgnoreCase("neurologia")) {
+precoFinal *= 2.0;
+precoFinal *= 0.85;
+
+} else if (especialidade.equalsIgnoreCase("pediatria")) {
+precoFinal *= 1.2;
+precoFinal *= 0.95;
+
+} else if (especialidade.equalsIgnoreCase("dermatologia")) {
+precoFinal *= 1.3;
+precoFinal *= 0.9;
+
+} else if (especialidade.equalsIgnoreCase("ortopedia")) {
+precoFinal *= 1.4;
+precoFinal *= 0.92;
+
+} else {
+precoFinal *= 1.0; // sem alteração
 }
 
-public void finalizarConsulta(){
+return precoFinal;
+
+}
+
+public void fimConsulta(){
+    if (this.status.equals("Agendada")) {
+        this.status = "Realizada";
+        System.out.println("Consulta finalizada");
+    } else {
+        System.out.println("Consulta não foi realizdada");
+    }
 
 }
 

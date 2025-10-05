@@ -8,7 +8,6 @@ public Paciente (String nome,String cpf,int idade){
     this.cpf = cpf;
     this.idade = idade;
    
-
 }
 
 // add metodos...

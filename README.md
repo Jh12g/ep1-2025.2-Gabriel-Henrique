@@ -10,9 +10,9 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 
 ## Dados do Aluno
 
-- **Nome completo:** [Preencher aqui]
-- **Matrícula:** [Preencher aqui]
-- **Curso:** [Preencher aqui]
+- **Nome completo:** Gabriel Henrique Dos Santos Viana
+- **Matrícula:** 242005258
+- **Curso:** Egenharia de Software(Ainda nao selecionado no Sigga)
 - **Turma:** [Preencher aqui]
 
 ---
