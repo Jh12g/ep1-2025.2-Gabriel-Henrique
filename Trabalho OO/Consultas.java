@@ -65,7 +65,6 @@ public void fimConsulta(){
 }
 
 
-
 public Paciente getPaciente() {
     return paciente;
 }
