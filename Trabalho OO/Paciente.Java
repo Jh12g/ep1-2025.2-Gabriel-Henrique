@@ -17,21 +17,6 @@ public Paciente (String nome,String cpf,int idade){
    
 }
 
-// add metodos...
-
-public double calcularCustoConsulta(){
-double total = 0.0;
-        for (Consultas con : historicoConsulta) {
-            total = con.calcularPrecoFinal();
-        
-        return total;
-}
-
-public void adicionarConsulta(Consultas consulta){
-
-    historicoConsulta.add(consulta);
-}
-
 
 public String getCpf(){
     return cpf;
@@ -48,6 +33,43 @@ public int getIdade(){
 public void setIdade(int idade){
     this.idade = idade;
 }
+
+public List<Consultas> getHistoricoConsultas() {
+         return historicoConsulta; 
+        }
+    public List<Internacao> getHistoricoInternacoes() {
+         return historicoInternacoes; 
+        }
+
+    public void adicionarConsulta(Consultas consulta) {
+        this.historicoConsulta.add(consulta);
+    }
+
+    public double calcularCustoConsulta() {
+    double total = 0.0; 
+
+    
+    for (Consultas consulta : historicoConsulta) {
+
+        double preco = consulta.calcularPrecoFinal();
+
+       
+        total += preco;
+    }
+
+    
+    return total;
+}
+
+    @Override
+    public String toString() {
+        return "\n Paciente" +
+                "\n Nome: " + getNome() + 
+                "\n Cpf: " + getCpf() + 
+                "\n Idade: " + getIdade() +
+                "\n Total de Consultas: " + getHistoricoConsultas().size() +
+                "\n Total de Internacoes: " + getHistoricoInternacoes().size();
+    }
 
     
 }

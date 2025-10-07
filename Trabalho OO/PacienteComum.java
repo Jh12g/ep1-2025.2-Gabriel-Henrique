@@ -16,5 +16,14 @@ public class PacienteComum extends Paciente {
         this.metodoPagamento = metodoPagamento;
     }
 
+    @Override
+    public String toString() {
+        return "\n Paciente Comum" +
+                "\n Nome: " + getNome() + 
+                "\n Cpf: " + getCpf() + 
+                "\n Idade: " + getIdade() +
+                "\n Metodo de Pagamento: " + getMetodoPagamento();
+    }
+
     
 }

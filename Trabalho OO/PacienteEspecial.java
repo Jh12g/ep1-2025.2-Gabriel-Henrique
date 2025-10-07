@@ -17,9 +17,9 @@ public class PacienteEspecial extends Paciente {
 
     }
 
-    public void setPodeInternacao(boolean podeInternacao){
-        this.podeInternacao = podeInternacao;
-    }
+   public boolean isPodeInternacaoEspecial() {
+         return podeInternacao; 
+        }
 
 
     public PlanoDeSaude getPlanoDeSaude() {
@@ -32,6 +32,15 @@ public class PacienteEspecial extends Paciente {
     }
 
 
+    @Override
+    public String toString() {
+        return "\n Paciente Especial" +
+                "\n Nome: " + getNome() + 
+                "\n Cpf: " + getCpf() + 
+                "\n Idade: " + getIdade() +
+                "\n Plano de Saude: " + (getPlanoDeSaude() != null ? getPlanoDeSaude().getNome() : "Nenhum") +
+                "\n Pode Internacao Especial?: " + isPodeInternacaoEspecial();
+    }
     
 
 }
