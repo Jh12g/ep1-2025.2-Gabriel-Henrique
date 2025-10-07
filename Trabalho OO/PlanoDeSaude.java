@@ -10,19 +10,6 @@ public class PlanoDeSaude {
 
     }
 
-    // add metodos...
-
-public void cadastrarPlano(){
-
-}
-
-public double aplicarDesconto(){
-
-}
-
-public boolean podeInternacaoEspecial(){
-    
-}
 
 public String getNome() {
     return nome;
@@ -49,5 +36,24 @@ public void setDescricao(String descricao) {
 }
 
 
+public void cadastrarPlano() {
+        System.out.println("Plano " + getNome() + " cadastrado com sucesso.");
+    }
+
+    public double aplicarDesconto(double valor) {
+        return valor - (valor * getDesconto());
+    }
+
+    public boolean podeTerInternacaoEspecial() {
+        return getDesconto() > 0.3;
+    }
+
+    @Override
+    public String toString() {
+        return "\n Plano De Saude" +
+                "\n Nome: " + getNome() + 
+                "\n Desconto Base: " + getDesconto() +
+                "\n Descrição: " + getDescricao();
+    }
     
 }
