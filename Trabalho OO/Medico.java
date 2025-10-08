@@ -3,48 +3,46 @@ import java.util.Date;
 import java.util.List;
 
 public class Medico extends Pessoa {
+    private String crm;
+    private String especialidade;
+    private double custoConsulta;
+    private List<Date> agendaHorarios;
 
-private String crm;
-private String especialidadeMed;
-private double precoConsulta;
-private List<Date> agendaHorarios;
+    public Medico(String nome, String crm, String especialidade, double custoConsulta) {
+        super(nome);
+        this.crm = crm;
+        this.especialidade = especialidade;
+        this.custoConsulta = custoConsulta;
+        this.agendaHorarios = new ArrayList<>();
+    }
 
-public Medico (String nome,String crm, String especialidadeMed, double precoConsulta){
-    super(nome);
-    this.crm = crm;
-    this.especialidadeMed = especialidadeMed;
-    this.precoConsulta = precoConsulta;
-    this.agendaHorarios = new ArrayList<>();
+    public String getCrm() {
+         return crm; 
+        }
 
-}
+    public void setCrm(String crm) {
+         this.crm = crm; 
+        }
 
 
-public String getCrm(){
-    return crm;
-}
+    public String getEspecialidade() {
+         return especialidade; 
+        }
 
-public void setCrm(String crm){
-    this.crm = crm;
+    public void setEspecialidade(String especialidade) {
+         this.especialidade = especialidade; 
+        }
 
-}
-public String getEspecialidadeMed(){
-    return especialidadeMed;
-}
 
-public void setEspecialidadeMed(String especialidadeMed){
-    this.especialidadeMed = especialidadeMed;
-}
+    public double getCustoConsulta() {
+         return custoConsulta; 
+        }
 
-public double getPrecoConsulta(){
-    return precoConsulta;
-}
+    public void setCustoConsulta(double custoConsulta) {
+         this.custoConsulta = custoConsulta; 
+        }
 
-public void setPrecoConsulta(double precoConsulta){
-    this.precoConsulta = precoConsulta;
-
-}
-
-public List<Date> getAgendaHorarios() {
+    public List<Date> getAgendaHorarios() {
          return agendaHorarios; 
         }
 
@@ -61,9 +59,7 @@ public List<Date> getAgendaHorarios() {
         return "\n Medico" +
                 "\n Nome: " + getNome() + 
                 "\n Crm: " + getCrm() + 
-                "\n Especialidade Medica: " + getEspecialidadeMed() + 
-                "\n Preço da Consulta :" + getPrecoConsulta();
+                "\n Especialidade: " + getEspecialidade() + 
+                "\n CustoConsulta :" + getCustoConsulta();
     }
-
-
 }

@@ -44,7 +44,7 @@ internados.add(inter);
 
 }
 
-System.out.println("=== Pacientes Internados no Momento ===");
+System.out.println(" Pacientes Internados no Momento ");
 for (Internacao i : internados) {
 System.out.println(i.getPaciente().getNome() + " | Quarto: " + i.getQuarto());
 }

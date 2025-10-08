@@ -1,36 +1,26 @@
 public class PacienteEspecial extends Paciente {
+    private PlanoDeSaude planoSaude;
+    private boolean podeInternacaoEspecial;
 
-
-    private PlanoDeSaude planoDeSaude;
-    private boolean podeInternacao;
-
-    public PacienteEspecial(String nome,String cpf,int idade,PlanoDeSaude planoDeSaude,boolean podeInternacao){
-        super(nome,cpf,idade);
-        this.planoDeSaude = planoDeSaude;
-        this.podeInternacao = podeInternacao;
-        
+    public PacienteEspecial(String nome, String cpf, int idade, PlanoDeSaude planoSaude) {
+        super(nome, cpf, idade);
+        this.planoSaude = planoSaude;
+        this.podeInternacaoEspecial = planoSaude.podeTerInternacaoEspecial();
     }
 
-
-    public boolean getPodeInternacao(){
-        return podeInternacao;
-
-    }
-
-   public boolean isPodeInternacaoEspecial() {
-         return podeInternacao; 
+    public PlanoDeSaude getPlanoSaude() {
+         return planoSaude; 
         }
 
+    public void setPlanoSaude(PlanoDeSaude planoSaude) {
+         this.planoSaude = planoSaude;
+         }
 
-    public PlanoDeSaude getPlanoDeSaude() {
-        return planoDeSaude;
-    }
-
-
-    public void setPlanoDeSaude(PlanoDeSaude planoDeSaude) {
-        this.planoDeSaude = planoDeSaude;
-    }
-
+    public boolean isPodeInternacaoEspecial() {
+         return podeInternacaoEspecial; 
+        }
+    public void setPodeInternacaoEspecial(boolean podeInternacaoEspecial) {
+         this.podeInternacaoEspecial = podeInternacaoEspecial; }
 
     @Override
     public String toString() {
@@ -38,9 +28,7 @@ public class PacienteEspecial extends Paciente {
                 "\n Nome: " + getNome() + 
                 "\n Cpf: " + getCpf() + 
                 "\n Idade: " + getIdade() +
-                "\n Plano de Saude: " + (getPlanoDeSaude() != null ? getPlanoDeSaude().getNome() : "Nenhum") +
+                "\n Plano de Saude: " + (getPlanoSaude() != null ? getPlanoSaude().getNome() : "Nenhum") +
                 "\n Pode Internacao Especial?: " + isPodeInternacaoEspecial();
     }
-    
-
 }
