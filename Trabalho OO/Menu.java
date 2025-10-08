@@ -1,21 +1,18 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
 
-    private Scanner scan;
     private List<Paciente> pacientes;
     private List<Medico> medicos;
     private List<PlanoDeSaude> planos;
     private List<Consultas> consultas;
 
+    private final Scanner scan = new Scanner(System.in);
+
     public Menu() {
-        scan = new Scanner(System.in);
-        pacientes = new ArrayList<>();
-        medicos = new ArrayList<>();
-        planos = new ArrayList<>();
-        consultas = new ArrayList<>();
+        // Carregar os dados automaticamente ao iniciar
+        System.out.println("\nCarregando dados do sistema...");
         pacientes = Armazenamento.carregarPacientes();
         medicos = Armazenamento.carregarMedicos();
         planos = Armazenamento.carregarPlanos();
@@ -37,6 +34,7 @@ public class Menu {
             System.out.println("8 - Listar Consultas");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
+
             opcao = scan.nextInt();
             scan.nextLine();
 
@@ -49,15 +47,19 @@ public class Menu {
                 case 6 -> listarPacientes();
                 case 7 -> listarMedicos();
                 case 8 -> listarConsultas();
-                case 0 -> System.out.println("Encerrando o sistema...");
-                default -> System.out.println("Opção inválida, tente novamente.");
+                case 0 -> {
+                    System.out.println("Salvando dados ");
+                    salvarTudo();
+                }
+                default -> System.out.println("Opção inválida, tente de novo.");
             }
+
         } while (opcao != 0);
 
         scan.close();
     }
 
-    // === Métodos auxiliares ===
+    // ===================== MÉTODOS DE CADASTRO =====================
 
     private void cadastrarPacienteComum() {
         System.out.print("Nome: ");
@@ -72,12 +74,12 @@ public class Menu {
 
         PacienteComum p = new PacienteComum(nome, cpf, idade, metodo);
         pacientes.add(p);
-        System.out.println("Paciente comum cadastrado com sucesso!");
+        System.out.println("Paciente comum cadastrado ");
     }
 
     private void cadastrarPacienteEspecial() {
         if (planos.isEmpty()) {
-            System.out.println("Nenhum plano de saúde cadastrado! Cadastre primeiro.");
+            System.out.println("Nenhum plano de saúde cadastrado! Cadastre um plano antes.");
             return;
         }
 
@@ -96,11 +98,6 @@ public class Menu {
         System.out.print("Escolha o plano: ");
         int indice = scan.nextInt() - 1;
         scan.nextLine();
-
-        if (indice < 0 || indice >= planos.size()) {
-            System.out.println("Plano inválido!");
-            return;
-        }
 
         PacienteEspecial pe = new PacienteEspecial(nome, cpf, idade, planos.get(indice));
         pacientes.add(pe);
@@ -134,7 +131,7 @@ public class Menu {
 
         PlanoDeSaude plano = new PlanoDeSaude(nome, desconto, descricao);
         planos.add(plano);
-        plano.cadastrarPlano();
+        System.out.println("Plano de saúde cadastrado com sucesso!");
     }
 
     private void cadastrarConsulta() {
@@ -159,11 +156,6 @@ public class Menu {
         int indiceMedico = scan.nextInt() - 1;
         scan.nextLine();
 
-        if (indicePaciente < 0 || indicePaciente >= pacientes.size() || indiceMedico < 0 || indiceMedico >= medicos.size()) {
-            System.out.println("Seleção inválida!");
-            return;
-        }
-
         System.out.print("Data e hora da consulta: ");
         String dataHora = scan.nextLine();
         System.out.print("Local da consulta: ");
@@ -175,6 +167,8 @@ public class Menu {
 
         System.out.println("Consulta cadastrada com sucesso!");
     }
+
+    // ===================== MÉTODOS DE LISTAGEM =====================
 
     private void listarPacientes() {
         System.out.println("\n=== PACIENTES CADASTRADOS ===");
@@ -189,11 +183,17 @@ public class Menu {
     }
 
     private void listarConsultas() {
-        System.out.println("\n=== CONSULTAS ===");
+        System.out.println("\n=== CONSULTAS CADASTRADAS ===");
         if (consultas.isEmpty()) System.out.println("Nenhuma consulta cadastrada.");
         else consultas.forEach(System.out::println);
     }
 
+    // ===================== MÉTODOS DE PERSISTÊNCIA =====================
 
+    private void salvarTudo() {
+        Armazenamento.salvarPacientes(pacientes);
+        Armazenamento.salvarMedicos(medicos);
+        Armazenamento.salvarPlanos(planos);
+        Armazenamento.salvarConsultas(consultas);
+    }
 }
-   
