@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Medico extends Pessoa {
+public class Medico extends Pessoa implements java.io.Serializable {
     private String crm;
     private String especialidade;
     private double custoConsulta;

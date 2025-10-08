@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paciente extends Pessoa {
+public class Paciente extends Pessoa implements java.io.Serializable {
 
 private String cpf;
 private int idade;

@@ -1,4 +1,4 @@
-public class PacienteComum extends Paciente {
+public class PacienteComum extends Paciente implements java.io.Serializable {
 
     private String metodoPagamento;
 

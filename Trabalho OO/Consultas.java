@@ -1,4 +1,4 @@
-public class Consultas {
+public class Consultas implements java.io.Serializable {
     private Paciente paciente;
     private Medico medico;
     private String dataHora;

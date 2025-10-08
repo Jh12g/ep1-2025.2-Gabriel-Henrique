@@ -1,4 +1,4 @@
-public class Internacao {
+public class Internacao implements java.io.Serializable {
 
 
 private Paciente paciente;

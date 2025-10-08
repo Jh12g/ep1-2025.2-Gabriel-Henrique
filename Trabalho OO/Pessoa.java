@@ -1,4 +1,4 @@
-public class Pessoa {
+public class Pessoa implements java.io.Serializable{
 
     private String nome;
 

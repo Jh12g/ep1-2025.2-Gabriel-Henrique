@@ -1,7 +1,7 @@
 import  java.util.ArrayList;
 import java.util.List;
 
-public class Relatorio {
+public class Relatorio  implements java.io.Serializable{
     
   private List<Paciente> listaPaciente;
   private List<Consultas> buscarConsulta;

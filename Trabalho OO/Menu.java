@@ -123,7 +123,7 @@ public class Menu {
     private void cadastrarPlano() {
         System.out.print("Nome do plano: ");
         String nome = scan.nextLine();
-        System.out.print("Desconto base (ex: 0.2 para 20%): ");
+        System.out.print("Desconto base (ex: 0,2 para 20%): ");
         double desconto = scan.nextDouble();
         scan.nextLine();
         System.out.print("Descrição: ");

@@ -1,4 +1,4 @@
-public class PlanoDeSaude {
+public class PlanoDeSaude implements java.io.Serializable {
     private String nome;
     private double desconto;
     private String descricao;
@@ -40,9 +40,7 @@ public void cadastrarPlano() {
         System.out.println("Plano " + getNome() + " cadastrado com sucesso.");
     }
 
-    public double aplicarDesconto(double valor) {
-        return valor - (valor * getDesconto());
-    }
+   
 
     public boolean podeTerInternacaoEspecial() {
         return getDesconto() > 0.3;

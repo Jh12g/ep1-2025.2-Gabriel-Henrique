@@ -1,79 +1,74 @@
 import java.io.*;
-import java.nio.file.*;
 import java.util.*;
-
 
 public class Armazenamento {
 
-   
     public static void salvarPacientes(List<Paciente> pacientes) {
-        salvarLista(pacientes, "pacientes.txt");
-    }
-
-    public static List<Paciente> carregarPacientes() {
-        return carregarLista("pacientes.txt");
-    }
-
-    
-    public static void salvarMedicos(List<Medico> medicos) {
-        salvarLista(medicos, "medicos.txt");
-    }
-
-    public static List<Medico> carregarMedicos() {
-        return carregarLista("medicos.txt");
-    }
-
-    
-    public static void salvarPlanos(List<PlanoDeSaude> planos) {
-        salvarLista(planos, "planos.txt");
-    }
-
-    public static List<PlanoDeSaude> carregarPlanos() {
-        return carregarLista("planos.txt");
-    }
-
-   
-    public static void salvarConsultas(List<Consultas> consultas) {
-        salvarLista(consultas, "consultas.txt");
-    }
-
-    public static List<Consultas> carregarConsultas() {
-        return carregarLista("consultas.txt");
-    }
-
-    
-    private static <T> void salvarLista(List<T> lista, String nomeArquivo) {
-        try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(nomeArquivo))) {
-            for (T obj : lista) {
-                bw.write(obj.toString());
-                bw.newLine();
-            }
-            System.out.println("Arquivo \"" + nomeArquivo + "\" salvo ");
-        } catch (IOException e) {
-            System.out.println("Erro ao salvar " + nomeArquivo + ": " + e.getMessage());
-        }
+        salvarObjetos(pacientes, "pacientes.dat");
     }
 
     @SuppressWarnings("unchecked")
-    private static <T> List<T> carregarLista(String nomeArquivo) {
-        List<T> lista = new ArrayList<>();
-        Path path = Paths.get(nomeArquivo);
+    public static List<Paciente> carregarPacientes() {
+        Object obj = carregarObjetos("pacientes.dat");
+        if (obj instanceof List<?>) return (List<Paciente>) obj;
+        return new ArrayList<>();
+    }
 
-        if (Files.exists(path)) {
-            try (BufferedReader br = Files.newBufferedReader(path)) {
-                String linha;
-                while ((linha = br.readLine()) != null) {
-                    // Armazenamos as linhas como strings — futuras versões podem converter para objetos
-                    ((List) lista).add(linha);
-                }
-                System.out.println("Arquivo \"" + nomeArquivo + "\" carregado.");
-            } catch (IOException e) {
-                System.out.println("Erro ao carregar " + nomeArquivo + ": " + e.getMessage());
-            }
-        } else {
-            System.out.println("Arquivo \"" + nomeArquivo + "\" não encontrado. Criando novo.");
+    public static void salvarMedicos(List<Medico> medicos) {
+        salvarObjetos(medicos, "medicos.dat");
+    }
+
+    @SuppressWarnings("unchecked")
+    public static List<Medico> carregarMedicos() {
+        Object obj = carregarObjetos("medicos.dat");
+        if (obj instanceof List<?>) return (List<Medico>) obj;
+        return new ArrayList<>();
+    }
+
+    public static void salvarPlanos(List<PlanoDeSaude> planos) {
+        salvarObjetos(planos, "planos.dat");
+    }
+
+    @SuppressWarnings("unchecked")
+    public static List<PlanoDeSaude> carregarPlanos() {
+        Object obj = carregarObjetos("planos.dat");
+        if (obj instanceof List<?>) return (List<PlanoDeSaude>) obj;
+        return new ArrayList<>();
+    }
+
+    public static void salvarConsultas(List<Consultas> consultas) {
+        salvarObjetos(consultas, "consultas.dat");
+    }
+
+    @SuppressWarnings("unchecked")
+    public static List<Consultas> carregarConsultas() {
+        Object obj = carregarObjetos("consultas.dat");
+        if (obj instanceof List<?>) return (List<Consultas>) obj;
+        return new ArrayList<>();
+    }
+
+    private static void salvarObjetos(Object obj, String arquivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(arquivo))) {
+            oos.writeObject(obj);
+            System.out.println("Arquivo '" + arquivo + "' salvo com sucesso (serializado).");
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar '" + arquivo + "': " + e.getMessage());
         }
+    }
 
-        return lista;
+    private static Object carregarObjetos(String arquivo) {
+        File f = new File(arquivo);
+        if (!f.exists()) {
+            System.out.println("Arquivo '" + arquivo + "' não encontrado. Iniciando vazio.");
+            return new ArrayList<>();
+        }
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(arquivo))) {
+            Object obj = ois.readObject();
+            System.out.println("Arquivo '" + arquivo + "' carregado (serializado).");
+            return obj;
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao carregar '" + arquivo + "': " + e.getMessage());
+            return new ArrayList<>();
+        }
     }
 }

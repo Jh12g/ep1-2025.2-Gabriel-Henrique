@@ -1,4 +1,4 @@
-public class PacienteEspecial extends Paciente {
+public class PacienteEspecial extends Paciente implements java.io.Serializable {
     private PlanoDeSaude planoSaude;
     private boolean podeInternacaoEspecial;
 
