@@ -41,14 +41,13 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 ## Prints da Execução
 
 1. Menu Principal:  
-   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 210827.png]
+   [https://s10.aconvert.com/convert/p3r68-cdx67/a3039-jy2j4.jpg]
 
 2. Cadastro de Médico:  
-   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 211010.png]
-
+   [https://s10.aconvert.com/convert/p3r68-cdx67/a0egg-zupg3.jpg]
+   
 3. Relatório de Consultas:  
-   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 211214.png]
-
+   [https://s10.aconvert.com/convert/p3r68-cdx67/ai6ow-v6cq3.jpg]
 ---
 
 ---
