@@ -28,7 +28,6 @@ public class PacienteEspecial extends Paciente implements java.io.Serializable {
                 "\n Nome: " + getNome() + 
                 "\n Cpf: " + getCpf() + 
                 "\n Idade: " + getIdade() +
-                "\n Plano de Saude: " + (getPlanoSaude() != null ? getPlanoSaude().getNome() : "Nenhum") +
-                "\n Pode Internacao Especial?: " + isPodeInternacaoEspecial();
+                "\n Plano de Saude: " + (getPlanoSaude() != null ? getPlanoSaude().getNome() : "Nenhum");
     }
 }

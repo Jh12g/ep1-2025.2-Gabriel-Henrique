@@ -13,42 +13,41 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 - **Nome completo:** Gabriel Henrique Dos Santos Viana
 - **Matrícula:** 242005258
 - **Curso:** Egenharia de Software(Ainda nao selecionado no Sigga)
-- **Turma:** [Preencher aqui]
-
+- **Turma:** [06]
 ---
 
 ## Instruções para Compilação e Execução
 
 1. **Compilação:**  
-   [Descrever aqui como compilar o projeto. Exemplo: `javac Main.java` ou o script usado]
+   Acabei nao conseguindo fazer a compilação nesse metodo.
 
 2. **Execução:**  
-   [Descrever aqui como executar o projeto. Exemplo: `java Main` ou o script usado]
+   A execução do programa seria no botao Debug que uso no VSCODE
 
 3. **Estrutura de Pastas:**  
-   [Descrever aqui as principais pastas do projeto]
+   A estrutura de pasta ficou apenas em uma unica pasta com o trabalho todon nela
 
 3. **Versão do JAVA utilizada:**  
-   [Descrever aqui como versão do JAVA utilizada no projeto. Sugestão: `java 21`]
+   Versão Utilizada do Java foi a JAVA 17
 
 ---
 
 ## Vídeo de Demonstração
 
-- [Inserir o link para o vídeo no YouTube/Drive aqui]
+- [https://drive.google.com/drive/folders/1dBjmDh5lnUtYnEbRXVzYApiswE2B0-RB?usp=drive_link]
 
 ---
 
 ## Prints da Execução
 
 1. Menu Principal:  
-   ![Inserir Print 1](caminho/do/print1.png)
+   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 210827.png]
 
 2. Cadastro de Médico:  
-   ![Inserir Print 2](caminho/do/print2.png)
+   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 211010.png]
 
-3. Relatório de ?:  
-   ![Inserir Print 3](caminho/do/print3.png)
+3. Relatório de Consultas:  
+   ![c:\Users\Usuário\Pictures\Saved Pictures\Captura de tela 2025-10-08 211214.png]
 
 ---
 
@@ -56,13 +55,12 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 
 ## Observações (Extras ou Dificuldades)
 
-- [Espaço para o aluno comentar qualquer funcionalidade extra que implementou, dificuldades enfrentadas, ou considerações importantes.]
-
+- Na produção desse codigo eu tive muita dificuldade na produção de todos os metodos do codigo, sem excessão nenhuma, isso se da pois eu fiquei muito tempo sem a pratica na linguagem java, na programação num todo, então para superar essa dificuldade tive que utilizar da ajuda de IAs para assim entender como funciona tais metodos e assim poder aplicar no projeto, outra dificuldade que tive foi no tempo, pois eu demorei para dar inicio ao projeto, tiveram motivos para tal, porem, eu poderia ter iniciado ao menos um pouco para deixar menos trabalhoso a minha situação e digo que meu codigo não ficou o melhor possivel, porem, é funcional.
 ---
 
 ## Contato
 
-- [Opcional: E-mail pessoal do aluno.]
+- ghenrique123sv@gmail.com
 
 ---
 
