@@ -24,7 +24,7 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 2. **Execução:**  
    A execução do programa seria no botao Debug que uso no VSCODE
 
-3. **Estrutura de Pastas:**  
+3. **Estrutura de Pastas:** 
    A estrutura de pasta ficou apenas em uma unica pasta com o trabalho todon nela
 
 3. **Versão do JAVA utilizada:**  
@@ -57,7 +57,7 @@ Desenvolvimento de um sistema de gerenciamento hospitalar utilizando os conceito
 
 ## Observações (Extras ou Dificuldades)
 
-- Na produção desse codigo eu tive muita dificuldade na produção de todos os metodos do codigo, sem excessão nenhuma, isso se da pois eu fiquei muito tempo sem a pratica na linguagem java, na programação num todo, então para superar essa dificuldade tive que utilizar da ajuda de IAs para assim entender como funciona tais metodos e assim poder aplicar no projeto, outra dificuldade que tive foi no tempo, pois eu demorei para dar inicio ao projeto, tiveram motivos para tal, porem, eu poderia ter iniciado ao menos um pouco para deixar menos trabalhoso a minha situação e digo que meu codigo não ficou o melhor possivel, porem, é funcional.
+- A construção deste projeto representou um excelente desafio técnico de retomada aos estudos práticos com Java. Devido a um período focado em outras frentes, utilizei ferramentas de IA como documentação de apoio para acelerar o entendimento e a implementação dos métodos necessários. O projeto também exigiu um esforço extra em gestão de tempo devido a um cronograma inicial reduzido. O resultado é um código funcional e estável. Embora existam oportunidades claras de melhoria e refatoração visando boas práticas, o objetivo principal de entregar uma solução operante foi atingido com sucesso.
 ---
 
 ## Contato
